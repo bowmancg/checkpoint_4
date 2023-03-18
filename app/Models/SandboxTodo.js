@@ -17,4 +17,17 @@ export class SandboxTodo{
       </form>
         `
     }
+
+    get todoCheckbox() {
+        return `
+        <div class="col-4 card">
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" value="" id="flexCheckDefault">
+            <label for="flexCheckDefault" class="form-check-label">
+              <h5>${this.description}</h5>
+            </label>
+          </div>
+        </div>
+        `
+    }
 }
