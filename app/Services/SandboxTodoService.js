@@ -8,6 +8,9 @@ class SandboxTodoService {
     async addSandboxTodo(formData) {
         const res = await todoApi.post('todos', formData)
         console.log('[NEW TODO]', res.data);
+        const newTodo = new SandboxTodo(res.data)
+        appState.todos.push(newTodo)
+        appState.emit('todos')
     }
 
     async getSandboxTodo() {

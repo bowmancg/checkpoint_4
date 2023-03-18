@@ -9,7 +9,6 @@ class AppState extends EventEmitter {
 
   /**@type {import('./Models/SandboxTodo').Todo[]} */
   todos = []
-  activeTodo = null
 }
 
 export const appState = new Proxy(new AppState(), {

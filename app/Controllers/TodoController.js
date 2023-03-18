@@ -1,7 +1,6 @@
 import { appState } from "../AppState.js";
 import { sandboxTodoService } from "../Services/SandboxTodoService.js";
 import { Pop } from "../Utils/Pop.js";
-import { SandboxTodo } from "../Models/SandboxTodo.js";
 import { setHTML } from "../Utils/Writer.js";
 import { getFormData } from "../Utils/FormHandler.js"
 
@@ -9,13 +8,13 @@ function _drawTodos() {
     let todo = appState.todos
     let template = ''
     todo.forEach(t => template += t.todoCardTemplate)
-    setHTML('todos', template)
+    setHTML('todo-form', template)
 }
 
 export class TodoController {
     constructor() {
         console.log('construct');
-        this.getSandboxTodo()
+        // this.getSandboxTodo()
         appState.on('todos', _drawTodos)
     }
 
@@ -27,7 +26,7 @@ export class TodoController {
         }
     }
 
-    async addSandboxTodo() {
+    async addSandboxTodo(event) {
         try {
             event.preventDefault()
             const form = event.target
