@@ -1,6 +1,5 @@
-import { appState } from "../AppState.js";
 
-export class SandboxTodo{
+export class Todo{
     constructor(data) {
         this.id = data.id
         this.completed = data.completed
@@ -22,7 +21,7 @@ export class SandboxTodo{
         return `
         <div class="col-4 card">
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="" id="flexCheckDefault">
+            <input type="checkbox" class="form-check-input" onclick="app.todoController.onClick()" value="${this.id}" ${this.completed ? 'checked' : ''}>
             <label for="flexCheckDefault" class="form-check-label">
               <h5>${this.description}</h5>
             </label>

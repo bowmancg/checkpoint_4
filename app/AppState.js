@@ -7,8 +7,20 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Value').Value[]} */
   values = loadState('values', [Value])
 
-  /**@type {import('./Models/SandboxTodo').Todo[]} */
+  /**@type {import('./Models/Todo').Todo[]} */
   todos = []
+  user = {
+    name: "chandler"
+  }
+
+    /**@type {import('./Models/Weather').Weather} */
+  weather = {}
+
+  /**@type {import('./Models/Quote').Quote} */
+  quote = {}
+
+    /**@type {import('./Models/Image').Image} */
+  image = {}
 }
 
 export const appState = new Proxy(new AppState(), {

@@ -20,7 +20,7 @@
   </header>
   <main>
     <div class="container-fluid">
-      <div class="row" id="checkbox">
+      <div class="row" id="todo-list">
         <div class="col-4 card">
           <div class="form-check">
             <input type="checkbox" class="form-check-input" value="" id="flexCheckDefault">
@@ -30,8 +30,8 @@
           </div>
         </div>
       </div>
-      <form id="todo-form" class="col-4 card mt-2" action="" onsubmit="">
-        <input type="text" placeholder="Create a Todo...">
+      <form class="col-4 card mt-2" onsubmit="app.todoController.addTodo()">
+        <input type="text" placeholder="Create a Todo..." name="description">
         <button type="submit" class="btn btn-outline-primary">Create
           Todo<i class="mdi mdi-plus"></i></button>
       </form>
