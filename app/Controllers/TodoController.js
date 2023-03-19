@@ -42,6 +42,7 @@ export class TodoController {
     async deleteTodo(id) {
         try {
             await todoService.deleteTodo(id)
+            Pop.confirm("Are you sure?")
         } catch (error) {
             Pop.error(error)
         }
