@@ -6,7 +6,4 @@ export class Image {
         this.largeImgUrl = data.largeImgUrl
     }
 
-    get anImage() {
-
-    }
 }

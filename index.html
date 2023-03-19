@@ -27,6 +27,7 @@
             <label for="flexCheckDefault" class="form-check-label">
               <h5>text</h5>
             </label>
+            <button onclick="app.todoController.deleteTodo()" type="button" class="btn btn-outline-danger"><i class="mdi mdi-delete"></i></button>
           </div>
         </div>
       </div>
@@ -35,9 +36,16 @@
         <button type="submit" class="btn btn-outline-primary">Create
           Todo<i class="mdi mdi-plus"></i></button>
       </form>
+      <div class="row">
+        <div id="quote-box" class="col-5 align-self-center mt-5">
+          <div class="text-light">
+              <p class="fs-3 text-center p-3">quote text</p>
+              <p id="author-name" class="fs-5 text-center" hidden>quote text</p>
+          </div>
+        </div>
+      </div>
   </main>
   <footer class="bg-dark text-light">
-    </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>

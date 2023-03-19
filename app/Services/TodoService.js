@@ -19,6 +19,12 @@ class TodoService {
         appState.todos = res.data.map(t => new Todo(t))
     }
 
+    async deleteTodo(id) {
+        const res = await todoApi.delete(`${id}`)
+        appState.todos = appState.todos.filter(todo => todo.id != id)
+        console.log(appState.todos);
+    }
+
     async setCompleted(id, completed) {
         //NOTE - find todo by id in appstate
         //NOTE - update found todo set completed property to completed argument value
@@ -30,4 +36,4 @@ class TodoService {
     }
 }
 
-export const sandboxTodoService = new TodoService()
+export const todoService = new TodoService()

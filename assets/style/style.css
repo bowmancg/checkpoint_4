@@ -1,5 +1,18 @@
 /* BASIC STYLES HERE */
 
-.body {
-    background-image: url();
+body {
+    background-position: center;
+    background-size: cover;
+}
+
+.quote-title:hover+.quote-author {
+    visibility: visible;
+    opacity: 1;
+}
+
+.quote-author {
+    visibility: hidden;
+    opacity: 0;
+    backdrop-filter: blur(5px);
+    transition: visibility 0s, opacity 1s linear;
 }

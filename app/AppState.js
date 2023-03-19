@@ -19,8 +19,12 @@ class AppState extends EventEmitter {
   /**@type {import('./Models/Quote').Quote} */
   quote = {}
 
+  isHidden = true
+
     /**@type {import('./Models/Image').Image} */
   image = {}
+
+
 }
 
 export const appState = new Proxy(new AppState(), {

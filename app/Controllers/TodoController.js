@@ -1,5 +1,5 @@
 import { appState } from "../AppState.js";
-import { sandboxTodoService as todoService } from "../Services/TodoService.js";
+import { todoService } from "../Services/TodoService.js";
 import { Pop } from "../Utils/Pop.js";
 import { setHTML } from "../Utils/Writer.js";
 import { getFormData } from "../Utils/FormHandler.js"
@@ -35,6 +35,14 @@ export class TodoController {
             form.reset()
         } catch (error) {
             console.error(error)
+            Pop.error(error)
+        }
+    }
+
+    async deleteTodo(id) {
+        try {
+            await todoService.deleteTodo(id)
+        } catch (error) {
             Pop.error(error)
         }
     }
