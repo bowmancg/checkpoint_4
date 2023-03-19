@@ -20,28 +20,27 @@
   </header>
   <main>
     <div class="container-fluid">
-      <div class="row" id="todo-list">
-        <div class="col-4 card">
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" value="" id="flexCheckDefault">
-            <label for="flexCheckDefault" class="form-check-label">
-              <h5>text</h5>
-            </label>
-            <button onclick="app.todoController.deleteTodo()" type="button" class="btn btn-outline-danger"><i class="mdi mdi-delete"></i></button>
-          </div>
+
+
+
+      <div class="card bg-dark text-light col-2">
+        <div id="todo-count" class="card-body">
+          
+        </div>
+        <ul id="todo-list-items" class="list-group-flush">
+         
+        </ul>
+        <div id="" class="card-footer">
+          <form class="mt-2" onsubmit="app.todoController.addTodo()">
+            <input type="text" placeholder="Create a Todo..." name="description">
+            <button type="submit" class="btn btn-outline-primary">Create
+              Todo<i class="mdi mdi-plus"></i></button>
+          </form>
         </div>
       </div>
-      <form class="col-4 card mt-2" onsubmit="app.todoController.addTodo()">
-        <input type="text" placeholder="Create a Todo..." name="description">
-        <button type="submit" class="btn btn-outline-primary">Create
-          Todo<i class="mdi mdi-plus"></i></button>
-      </form>
+      <div id="clock" class="text-light"></div>
       <div class="row">
         <div id="quote-box" class="col-5 align-self-center mt-5">
-          <div class="text-light">
-              <p class="fs-3 text-center p-3">quote text</p>
-              <p id="author-name" class="fs-5 text-center" hidden>quote text</p>
-          </div>
         </div>
       </div>
       <div class="row">

@@ -13,6 +13,11 @@ class TodoService {
         appState.emit('todos')
     }
 
+    getTodoCount() {
+        let todos = appState.todos.filter(t => !t.completed)
+        return todos.length
+    }
+
     async getTodos() {
         const res = await todoApi.get('')
         console.log('[GET DATA]', res.data);
@@ -33,6 +38,8 @@ class TodoService {
         console.log('found a todo', foundTodo);
         foundTodo.completed = completed
         const res = await todoApi.put(id, foundTodo)
+        // TODO update state with new todo
+        appState.emit('todos')
     }
 }
 

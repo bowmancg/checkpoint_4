@@ -7,13 +7,23 @@ import { getFormData } from "../Utils/FormHandler.js"
 function _drawTodos() {
     let todo = appState.todos
     let template = ''
-    todo.forEach(t => template += t.todoCheckbox)
-    setHTML('todo-list', template)
+    todo.forEach(t => template += t.todoItem)
+    setHTML('todo-list-items', template)
+}
+
+function _drawTodoCount() {
+    let template = `<div class="row card-title">
+    <div class="fs-6 col align-self-start">Todo</div>
+    <div class="col align-self-end">${todoService.getTodoCount()} left</div>
+  </div>
+  `
+   setHTML('todo-count', template) 
 }
 
 export class TodoController {
     constructor() {
         console.log('construct');
+        appState.on('todos', _drawTodoCount)
         appState.on('todos', _drawTodos)
         this.getTodos()
     }
@@ -41,8 +51,9 @@ export class TodoController {
 
     async deleteTodo(id) {
         try {
-            await todoService.deleteTodo(id)
-            Pop.confirm("Are you sure?")
+            if (await Pop.confirm("Are you sure?")) {
+                await todoService.deleteTodo(id)
+            }            
         } catch (error) {
             Pop.error(error)
         }

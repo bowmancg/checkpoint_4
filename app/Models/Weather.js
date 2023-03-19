@@ -6,7 +6,7 @@ export class Weather {
         this.temp = data.main.temp
         this.description = this.weather.description
         this.iconUrl = `https://openweathermap.org/img/wn/${this.weather.icon}.png`
-        this.tempMeasurement = 'C'
+        this.tempMeasurement = 'F'
     }
 
     kelvinToFahrenheit() {
