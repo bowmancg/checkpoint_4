@@ -20,13 +20,13 @@ export class Todo {
   get todoItem() {
     return `
       <li class="list-group-item">
-        <span class="align-top">
+        <span class="mb-2">
           <input type="checkbox" class="form-check-input" onclick="app.todoController.onClick()" value="${this.id}" ${this.completed ? 'checked' : ''}>
         </span>
-        <span class="offset-1 align-top">
+        <span class="mb-2">
           ${this.description}
         </span>
-        <span class="offset-8 align-top">
+        <span class="offset-8 mb-2">
           <button onclick="app.todoController.deleteTodo('${this.id}')" type="button"
             class="btn btn-outline-danger"><i class="mdi mdi-delete"></i></button>
         </span>
@@ -46,9 +46,6 @@ export class Todo {
                 <h5>${this.description}</h5>
               </label>
             </div>
-            <div class="col-1">  
-              <button onclick="app.todoController.deleteTodo('${this.id}')" type="button" class="btn btn-outline-danger"><i class="mdi mdi-delete"></i></button>
-            </div>  
             </div>
         </div>
         `

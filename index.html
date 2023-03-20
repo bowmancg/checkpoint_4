@@ -20,31 +20,8 @@
   </header>
   <main>
     <div class="container-fluid">
-
-
-
-      <div class="card bg-dark text-light col-2">
-        <div id="todo-count" class="card-body">
-          
-        </div>
-        <ul id="todo-list-items" class="list-group-flush">
-         
-        </ul>
-        <div id="" class="card-footer">
-          <form class="mt-2" onsubmit="app.todoController.addTodo()">
-            <input type="text" placeholder="Create a Todo..." name="description">
-            <button type="submit" class="btn btn-outline-primary">Create
-              Todo<i class="mdi mdi-plus"></i></button>
-          </form>
-        </div>
-      </div>
-      <div id="clock" class="text-light"></div>
-      <div class="row">
-        <div id="quote-box" class="col-5 align-self-center mt-5">
-        </div>
-      </div>
-      <div class="row">
-        <div id="weather-box" class="col-2">
+      <div class="row justify-content-end">
+        <div id="weather-box" class="col-1 mt-3">
           <div class="text-light text-center card bg-dark">
             <p class="fs-5">temp</p>
             <p class="fs-6">skies</p>
@@ -52,8 +29,33 @@
           </div>
         </div>
       </div>
+      <div class="row justify-content-center">
+        <div id="clock" class="col-5 clock-text text-center text-light">
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="card bg-dark text-light col-2">
+          <div id="todo-count" class="card-body">
+
+          </div>
+          <ul id="todo-list-items" class="">
+
+          </ul>
+          <div class="card-footer">
+            <form class="mt-2" onsubmit="app.todoController.addTodo()">
+              <input type="text" placeholder="Create a Todo..." name="description">
+              <button type="submit" class="btn btn-outline-primary">Create
+                Todo<i class="mdi mdi-plus"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
   </main>
-  <footer class="bg-dark text-light">
+  <footer class="text-light">
+    <div class="row mb-2 justify-content-center">
+      <div id="quote-box" class="col-5 align-self-center">
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
