@@ -7,8 +7,11 @@ function _drawClock() {
 
 export class ClockController {
     constructor() {
-        appState.on('time', _drawClock)
-        appState.time = this.currentTime()
+        // appState.on('time', _drawClock)
+        // appState.time = this.currentTime()
+        setInterval(() => {
+            clockElem.innerHTML = this.currentTime()
+          }, 1000)
     }
     currentTime() {
         let date = new Date()

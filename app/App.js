@@ -18,6 +18,3 @@ window["app"] = new App();
 
 let clockElem = document.getElementById("clock")
 
-setInterval(() => {
-  clockElem.innerHTML = app.clockController.currentTime()
-}, 1000)

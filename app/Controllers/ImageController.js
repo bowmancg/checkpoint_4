@@ -5,7 +5,7 @@ import { imagesService } from "../Services/ImagesService.js";
 
 function _drawImage() {
     let img = appState.image
-    document.body.style.backgroundImage = `url(${img.imgUrl})`
+    document.body.style.backgroundImage = `url(${img.largeImgUrl})`
 }
 
 export class ImageController {
